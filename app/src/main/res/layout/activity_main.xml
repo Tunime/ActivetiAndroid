@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:hint="nombre"
+        android:textColorHint="#4ab7b7b7"
+        android:textSize="24dp"
+        android:id="@+id/expnombre"/>
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:hint="codigo"
+        android:textColorHint="#4ab7b7b7"
+        android:textSize="24dp"
+        android:id="@+id/expcodigo"/>
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:hint="nota"
+        android:textColorHint="#4ab7b7b7"
+        android:textSize="24dp"
+        android:id="@+id/expnota"/>
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:layout_margin="3dp"
+        android:hint="Date"
+        android:textColorHint="#4ab7b7b7"
+        android:textSize="24dp"
+        android:id="@+id/expdate"/>
+</LinearLayout>

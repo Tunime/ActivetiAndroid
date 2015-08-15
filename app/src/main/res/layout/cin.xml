@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+
+    <EditText
+        android:layout_margin="3dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/txtnombre" />
+
+    <EditText
+        android:layout_margin="3dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/txtnota" />
+
+    <EditText
+        android:layout_margin="3dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/txtcodigo" />
+
+    <EditText
+        android:layout_margin="3dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/txtfecha"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_margin="10dp"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:text="guardar \(°w°)/"
+            android:textColor="#FFFFFF"
+            android:background="#ff39b0d8"
+            android:onClick="onClick"
+            android:id="@+id/presion2"/>
+        <Button
+            android:layout_margin="10dp"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:textColor="#FFFFFF"
+            android:background="#ffd80403"
+            android:text="visualizar \(°w°)/"
+            android:onClick="onClick"
+            android:id="@+id/presion3"/>
+    </LinearLayout>
+
+</LinearLayout>
