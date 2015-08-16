@@ -30,13 +30,16 @@ public class MainActivity extends Activity{
     EditText expnota;
     EditText expdate;
 
-
     String date;
+    String dateNow;
+    Date dateParam;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        date = getIntent().getExtras().getString("date");
+        dateParam = new Date(date);
 
         //capturamos el edit
         expnombre=(EditText)findViewById(R.id.expnombre);
@@ -45,41 +48,43 @@ public class MainActivity extends Activity{
         expdate  =(EditText)findViewById(R.id.expdate);
 
 
-
-        date="14-8-15";
-
         List<modelo> alumno  = getmodel();
-        String nombre1  = alumno.get(0).nombre;
-        String codigo1  = alumno.get(0).codigo;
-        String nota1    = alumno.get(0).nota;
-        Date date1      = alumno.get(0).date;
-
-        Date now = new Date("05/12/2015");
-
-        DateFormat defaultDf = DateFormat.getDateInstance();
         DateFormat shortDf = DateFormat.getDateInstance(DateFormat.SHORT);
-        DateFormat mediumDf = DateFormat.getDateInstance(DateFormat.MEDIUM);
-        DateFormat longDf = DateFormat.getDateInstance(DateFormat.LONG);
-        DateFormat fullDf = DateFormat.getDateInstance(DateFormat.FULL);
+        for (int i = 0; i < alumno.size(); i++) {
+            String nombre1  = alumno.get(i).nombre;
+            String codigo1  = alumno.get(i).codigo;
+            String nota1    = alumno.get(i).nota;
+            Date date1      = alumno.get(i).date;
+
+            Log.i("Datos : ", "Nombre : " + nombre1
+            +"\n"+"Codigo : "+ codigo1
+            +"\n"+"Nota : "+ nota1
+            +"\n"+"Fecha : " + shortDf.format(date1));
+
+        }
+
+
+
+
+        //DateFormat mediumDf = DateFormat.getDateInstance(DateFormat.MEDIUM);
+        //DateFormat longDf = DateFormat.getDateInstance(DateFormat.LONG);
+        //DateFormat fullDf = DateFormat.getDateInstance(DateFormat.FULL);
+        //DateFormat defaultDf = DateFormat.getDateInstance();
+
 
         //Log.i("defaultdf"," 1. " + defaultDf.format(now));
-        Log.i("shortdf"," 2. " + shortDf.format(now));
-        Log.i("mediundf"," 3. " + mediumDf.format(now));
-        Log.i("longdf"," 4. " + longDf.format(now));
-        Log.i("fulldf"," 5. " + fullDf.format(now));
-
-        expnombre.setText(nombre1);
-        expcodigo.setText(codigo1);
-        expnota.setText(nota1);
-        expdate.setText(date1.getDay()+"-"+date1.getMonth()+"-"+date1.getYear());
+        //Log.i("mediundf"," 3. " + mediumDf.format(now));
+        //Log.i("longdf"," 4. " + longDf.format(now));
+        //Log.i("fulldf"," 5. " + fullDf.format(now));
+        //dateNow =  shortDf.format(now);
 
 
     }
     public List<modelo> getmodel(){
         return new Select()
                 .from(modelo.class)
-                .where("date<=?",date)
-                .execute();
+                .where("date=?",dateParam)
+                .executeSingle();
     }
 
 

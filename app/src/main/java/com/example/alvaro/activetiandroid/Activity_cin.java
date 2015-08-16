@@ -44,16 +44,29 @@ public class Activity_cin extends Activity implements View.OnClickListener{
         txtnota  =(EditText)findViewById(R.id.txtnota);
         txtfecha =(EditText)findViewById(R.id.txtfecha);
 
+        /*for (int i = 1; i <= 9; i++) {
+            modelo alumno = new modelo();
+            alumno.nombre = "adada " + i;
+            alumno.codigo = "123123";
+            alumno.nota   = "dadaad";
+            alumno.date   = new java.util.Date("0"+i+"/10/2014");
+            alumno.save();
+        }
+
+*/
     }
 
     public void onClick(View v)
     {
 
         if (v == presion2){
-            Time date = new Time(Time.getCurrentTimezone());
-            date.setToNow();
-            String month = date.month+"";
-            String monthday=date.monthDay+"";
+            //------------------------------------------------
+            //Time date = new Time(Time.getCurrentTimezone());
+            //date.setToNow();
+            //String month = date.month+"";
+            //String monthday=date.monthDay+"";
+            //-------------------------------------
+
             //obtenemos en una string  los datos del edit text
             String iwanombre = txtnombre.getText().toString();
             String iwacodigo = txtcodigo.getText().toString();
@@ -64,16 +77,16 @@ public class Activity_cin extends Activity implements View.OnClickListener{
             alumno.nombre = iwanombre;
             alumno.codigo = iwacodigo;
             alumno.nota   = iwanota;
-            alumno.date   = Date.valueOf(iwadate);
-
-            //Date _date = new Date();
-
-            Log.i("FECHA : ", alumno.date.toString());
+            alumno.date   = new java.util.Date(iwadate);
             alumno.save();
+            Log.i("FECHA : ", alumno.date.toString());
+
         }
         if(v== presion3)
         {
+            String date = txtfecha.getText().toString();
             Intent i = new Intent(this, MainActivity.class );
+            i.putExtra("date",date);
             startActivity(i);
         }
 

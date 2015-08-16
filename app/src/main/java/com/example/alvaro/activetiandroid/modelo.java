@@ -18,7 +18,7 @@ import java.util.concurrent.TimeoutException;
 @Table(name="Alumno",id ="id")
 public class modelo extends Model {
 
-    @Column(unique =true,index=true)
+    @Column
     public String nombre;
     @Column
     public String codigo;
