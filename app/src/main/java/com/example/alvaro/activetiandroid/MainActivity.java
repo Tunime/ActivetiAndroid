@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+
 import com.activeandroid.ActiveAndroid;
 import com.activeandroid.app.Application;
 import com.activeandroid.query.Select;
@@ -54,17 +55,14 @@ public class MainActivity extends Activity{
             String nombre1  = alumno.get(i).nombre;
             String codigo1  = alumno.get(i).codigo;
             String nota1    = alumno.get(i).nota;
-            Date date1      = alumno.get(i).date;
+            //Date date1      = alumno.get(i).;
 
-            Log.i("Datos : ", "Nombre : " + nombre1
+           /* Log.i("Datos : ", "Nombre : " + nombre1
             +"\n"+"Codigo : "+ codigo1
             +"\n"+"Nota : "+ nota1
-            +"\n"+"Fecha : " + shortDf.format(date1));
+            +"\n"+"Fecha : " + shortDf.format(date1));*/
 
         }
-
-
-
 
         //DateFormat mediumDf = DateFormat.getDateInstance(DateFormat.MEDIUM);
         //DateFormat longDf = DateFormat.getDateInstance(DateFormat.LONG);

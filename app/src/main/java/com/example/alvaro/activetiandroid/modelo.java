@@ -25,9 +25,11 @@ public class modelo extends Model {
     @Column
     public String nota;
     @Column
-    public Date date;
-    //@Column
-    //public  String month;
+    public String day;
+    @Column
+    public  String month;
+    @Column
+    public String year;
     //las columnas simpre van  ariba de los  variables
 
 }

@@ -26,6 +26,11 @@ public class Activity_cin extends Activity implements View.OnClickListener{
     public Button guardar;
     public Button presion2;
     public Button presion3;
+    int c=1;
+
+    String month;
+    String monthday;
+    String year;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,16 +49,34 @@ public class Activity_cin extends Activity implements View.OnClickListener{
         txtnota  =(EditText)findViewById(R.id.txtnota);
         txtfecha =(EditText)findViewById(R.id.txtfecha);
 
-        /*for (int i = 1; i <= 9; i++) {
-            modelo alumno = new modelo();
-            alumno.nombre = "adada " + i;
-            alumno.codigo = "123123";
-            alumno.nota   = "dadaad";
-            alumno.date   = new java.util.Date("0"+i+"/10/2014");
-            alumno.save();
+        Time date = new Time(Time.getCurrentTimezone());
+        date.setToNow();
+        month   = date.month+"";
+        monthday=date.monthDay+"";
+        year    =date.year+"";
+
+        if(c==1)
+        {
+            for (int i = 1; i <= 9; i++) {
+                modelo alumno = new modelo();
+                alumno.nombre = "adada " + i;
+                alumno.codigo = "123123";
+                alumno.nota   = "dadaad";
+                alumno.day    =monthday;
+                alumno.month  =month;
+                alumno.year   =year;
+                alumno.save();
+
+                Log.i("Datos : ", "Nombre : " + alumno.nombre
+                        +"\n"+"Codigo : "+ alumno.codigo
+                        +"\n"+"Nota : "+ alumno.nota
+                        +"\n"+"Fecha : " + alumno.day+"/"+alumno.month+"/"+alumno.year);
+
+            }
+            c=0;
         }
 
-*/
+
     }
 
     public void onClick(View v)
@@ -77,16 +100,18 @@ public class Activity_cin extends Activity implements View.OnClickListener{
             alumno.nombre = iwanombre;
             alumno.codigo = iwacodigo;
             alumno.nota   = iwanota;
-            alumno.date   = new java.util.Date(iwadate);
+            alumno.day    =monthday;
+            alumno.month  =month;
+            alumno.year   =year;
             alumno.save();
-            Log.i("FECHA : ", alumno.date.toString());
+            //Log.i("FECHA : ", alumno.date.toString());
 
         }
         if(v== presion3)
         {
-            String date = txtfecha.getText().toString();
+            //String date = txtfecha.getText().toString();
             Intent i = new Intent(this, MainActivity.class );
-            i.putExtra("date",date);
+            //i.putExtra("date",date);
             startActivity(i);
         }
 
